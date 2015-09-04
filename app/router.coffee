@@ -8,5 +8,6 @@ Router = Ember.Router.extend {
 Router.map ->
   this.route 'users', { path: '/users' }, ->
     this.route('new')
+  @route 'users/index'
 
 `export default Router`

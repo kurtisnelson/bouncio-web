@@ -16,5 +16,6 @@
   {{/each}}
   <label>Confirm Password</label>
   {{input value=confirmPassword type="password" required="true"}}
-  <button type="submit">Register</button>
+
+  <button type="submit" disabled={{cannot_submit}}>Register</button>
 </form>
