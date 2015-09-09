@@ -1,0 +1,8 @@
+<nav>
+  {{#if session.isAuthenticated}}
+  <a href="#" {{ action 'logout' }}>Logout</a>
+  {{else}}
+    {{#link-to 'login'}}Login{{/link-to}}
+    {{#link-to 'users.new'}}Sign Up{{/link-to}}
+  {{/if}}
+</nav>
