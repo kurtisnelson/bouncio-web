@@ -1,7 +1,6 @@
 import Ember from 'ember';
-var SignUpComponent;
 
-SignUpComponent = Ember.Component.extend({
+export default Ember.Component.extend({
   valid_password: (function() {
     return this.get("user.password") && this.get("user.password").length >= 8;
   }).property("user.password"),
@@ -25,5 +24,3 @@ SignUpComponent = Ember.Component.extend({
     }
   }
 });
-
-export default SignUpComponent;
