@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('users', { path: '/users' }, function() {
     this.route('new');
   });
+  this.route('apps', { path: '/apps' }, function() {
+    this.route('new');
+  });
 });
 
 export default Router;
