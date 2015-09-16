@@ -1,10 +1,11 @@
 import Ember from 'ember';
-var UsersNewRoute;
 
-UsersNewRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.createRecord('user');
+export default Ember.Route.extend({
+  model() {
+    let user = this.store.createRecord('user');
+    this.store.findRecord('app', "00000000-0000-0000-0000-000000000000").then(app =>
+      user.set('app', app)
+    );
+    return user;
   }
 });
-
-export default UsersNewRoute;

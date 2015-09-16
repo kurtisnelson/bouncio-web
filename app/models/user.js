@@ -3,7 +3,8 @@ var User;
 
 User = DS.Model.extend({
   email: DS.attr(),
-  password: DS.attr()
+  password: DS.attr(),
+  app: DS.belongsTo('app')
 });
 
 export default User;
