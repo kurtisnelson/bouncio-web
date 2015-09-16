@@ -1,7 +1,7 @@
 {
-  "name": "bouncer",
+  "name": "bouncio",
   "version": "0.0.0",
-  "description": "Small description for bouncer goes here",
+  "description": "Small description for bouncio goes here",
   "private": true,
   "directories": {
     "doc": "doc",

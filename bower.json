@@ -1,5 +1,5 @@
 {
-  "name": "bouncer",
+  "name": "bouncio",
   "dependencies": {
     "ember": "2.0.1",
     "ember-cli-shims": "ember-cli/ember-cli-shims",

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'bouncer',
+    modulePrefix: 'bouncio',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -18,14 +18,14 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self'",
       'font-src': "'self'",
-      'connect-src': "'self' bouncer-core.herokuapp.com localhost:4000",
+      'connect-src': "'self' bouncio-core.herokuapp.com localhost:4000",
       'img-src': "'self'",
       'style-src': "'self'",
       'media-src': "'self'"
     },
 
     APP: {
-      apiHost: 'https://bouncer-core.herokuapp.com'
+      apiHost: 'https://bouncio-core.herokuapp.com'
     }
   };
 
