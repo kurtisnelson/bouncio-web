@@ -1,8 +1,22 @@
-<nav>
-  {{#if session.isAuthenticated}}
-  <a href="#" {{ action 'logout' }}>Logout</a>
-  {{else}}
-    {{#link-to 'login'}}Login{{/link-to}}
-    {{#link-to 'users.new'}}Sign Up{{/link-to}}
-  {{/if}}
-</nav>
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    {{#link-to 'application' class="logo"}}
+      <img src="assets/images/small-logo.png" alt="Logo Image">
+    {{/link-to}}
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        {{#if session.isAuthenticated}}
+          <li class="nav-link">{{link-to 'Apps' 'apps'}}</li>
+          <li class="nav-link">{{link-to 'My Users' 'users'}}</li>
+          <li class="nav-link">
+            <a href="#" {{ action 'logout' }}>Logout</a>
+          </li>
+        {{else}}
+          <li class="nav-link">{{link-to 'Login' 'login'}}</li>
+          <li class="nav-link">{{link-to 'Sign Up' 'register'}}</li>
+        {{/if}}
+      </ul>
+    </nav>
+  </div>
+</header>

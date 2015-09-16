@@ -13,7 +13,8 @@
     "loader.js": "ember-cli/loader.js",
     "qunit": "~1.18.0",
     "node-uuid": "1.4.1",
-    "neat": "~1.7.2"
+    "neat": "~1.7.2",
+    "normalize.css": "3.0.3"
   },
   "resolutions": {
     "ember": "2.0.1"

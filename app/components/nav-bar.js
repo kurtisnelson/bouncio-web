@@ -6,5 +6,20 @@ export default Ember.Component.extend({
     logout() {
       this.get('session').invalidate();
     }
+  },
+
+  didInsertElement() {
+    var menuToggle = Ember.$('#js-mobile-menu').unbind();
+    Ember.$('#js-navigation-menu').removeClass("show");
+    menuToggle.on('click', e => {
+        e.preventDefault();
+        $('#js-navigation-menu').slideToggle(function(){
+          if($('#js-navigation-menu').is(':hidden')) {
+            $('#js-navigation-menu').removeAttr('style');
+          }
+        });
+    });
   }
 });
+
+

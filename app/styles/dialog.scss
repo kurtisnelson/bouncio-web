@@ -1,0 +1,54 @@
+.dialog {
+  $base-border-color: #dcdcdc !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: #fff !default;
+  $base-line-height: 1.5em !default;
+  $dark-gray: #333 !default;
+  $light-gray: #ddd !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $modal-padding: 3em;
+  $modal-background: $base-background-color;
+
+  @include position(absolute, 0);
+  background-color: rgba(#000, 0.85);
+  padding-top: 0.6em;
+  text-align: left;
+  z-index: 99999999999;
+  overflow: auto;
+
+  @include media($large-screen) {
+    padding-top: 10em;
+  }
+
+  .content {
+    background: $modal-background;
+    margin-top: 0;
+    padding: $modal-padding / 2;
+    position: relative;
+
+    @include media($medium-screen) {
+      margin: auto;
+      padding: $modal-padding;
+      width: 60%;
+      border-radius: $base-border-radius;
+    }
+
+    @include media($large-screen) {
+      width: 50%;
+    }
+
+    h1 {
+      color: $base-font-color;
+      margin-bottom: 0 0 0.6em 0;
+      text-align: left;
+      text-transform: capitalize;
+    }
+
+    p {
+      color: $base-font-color;
+      line-height: $base-line-height;
+    }
+  }
+}
