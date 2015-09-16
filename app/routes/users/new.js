@@ -7,5 +7,9 @@ export default Ember.Route.extend({
       user.set('app', app)
     );
     return user;
+  },
+
+  deactivate() {
+    this.currentModel.rollbackAttributes();
   }
 });
