@@ -1,7 +1,7 @@
 <div class="dialog">
+  <span class="title"><img src="assets/images/logo.png" alt="bounc.io" height="104"/></span>
   <div class="content">
-    <h1>Sign Up For Bouncio</h1>
-    {{sign-up user=model}}
-    {{link-to "Login" 'login' class="btn" tagName="button"}}
+    {{register-form user=model}}
+    {{link-to "<- Login" 'login'}}
   </div>
 </div>

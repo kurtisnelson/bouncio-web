@@ -1,7 +1,5 @@
-<form {{action "login" on="submit"}}>
-  <label for="email">Email</label>
-  {{input value=email type="email" required="true"}}
-  <label for="password">Password</label>
-  {{input value=password type="password" required="true"}}
-  <button type="submit" disabled={{cannot_submit}}>Login</button>
+<form id="login" {{action "login" on="submit"}}>
+  {{input value=email type="email" required="true" placeholder="email"}}
+  {{input value=password type="password" required="true" placeholder="password"}}
+  <button type="submit" disabled={{cannot_submit}}>Sign in</button>
 </form>

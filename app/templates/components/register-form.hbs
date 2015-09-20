@@ -1,4 +1,4 @@
-<form {{action "register" on="submit"}}>
+<form id="register" {{action "register" on="submit"}}>
   <label>Email</label>
   {{input value=user.email type="email" required="true"}}
   {{#each user.errors.email as |error|}}

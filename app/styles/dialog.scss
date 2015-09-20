@@ -22,6 +22,17 @@
     padding-top: 10em;
   }
 
+  .title {
+    position: relative;
+    color: white;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+    display: block;
+    width: auto;
+    font-size: 28pt;
+  }
+
   .content {
     background: $modal-background;
     margin-top: 0;
