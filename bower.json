@@ -12,7 +12,7 @@
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js",
     "qunit": "~1.18.0",
-    "node-uuid": "1.4.1",
+    "node-uuid": "1.4.3",
     "neat": "~1.7.2",
     "normalize.css": "3.0.3"
   },
