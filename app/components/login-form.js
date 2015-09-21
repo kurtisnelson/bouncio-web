@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  session: Ember.inject.service('session'),
   valid_password: (function() {
     return this.get("password") && this.get("password").length >= 8;
   }).property("password"),
@@ -9,5 +10,14 @@ export default Ember.Component.extend({
   }).property("email"),
   cannot_submit: (function() {
     return !this.get("valid_password") || !this.get("valid_email");
-  }).property('valid_password')
+  }).property('valid_password'),
+  actions: {
+    login() {
+      let data = this.getProperties('email', 'password');
+      data.identification = data.email;
+      this.get('session').authenticate('authenticator:oauth2', data).catch((reason) => {
+        this.set('errorMessage', reason.error);
+      });
+    }
+  }
 });

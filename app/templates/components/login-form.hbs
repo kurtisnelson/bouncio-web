@@ -2,4 +2,7 @@
   {{input value=email type="email" required="true" placeholder="email"}}
   {{input value=password type="password" required="true" placeholder="password"}}
   <button type="submit" disabled={{cannot_submit}}>Sign in</button>
+  {{#if errorMessage}}
+    <span class="error">Sorry, those credentials are not valid.</span>
+  {{/if}}
 </form>

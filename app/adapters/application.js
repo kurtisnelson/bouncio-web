@@ -1,9 +1,8 @@
 import DS from 'ember-data';
 import ENV from '../config/environment';
-var ApplicationAdapter;
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
-ApplicationAdapter = DS.JSONAPIAdapter.extend({
-  host: ENV.APP.apiHost
+export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
+  host: ENV.APP.apiHost,
+  authorizer: 'authorizer:application'
 });
-
-export default ApplicationAdapter;
