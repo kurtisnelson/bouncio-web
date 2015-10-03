@@ -13,9 +13,9 @@ export default Ember.Component.extend({
     Ember.$('#js-navigation-menu').removeClass("show");
     menuToggle.on('click', e => {
         e.preventDefault();
-        $('#js-navigation-menu').slideToggle(function(){
-          if($('#js-navigation-menu').is(':hidden')) {
-            $('#js-navigation-menu').removeAttr('style');
+        Ember.$('#js-navigation-menu').slideToggle(function(){
+          if(Ember.$('#js-navigation-menu').is(':hidden')) {
+            Ember.$('#js-navigation-menu').removeAttr('style');
           }
         });
     });
