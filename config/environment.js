@@ -26,12 +26,11 @@ module.exports = function(environment) {
 
     APP: {
       apiHost: 'https://bouncio-core.herokuapp.com'
-    },
-    'ember-simple-auth': {
-      base: {
-        store: 'session-store:local-storage'
-      }
     }
+  };
+
+  ENV['ember-simple-auth'] = {
+    store: 'session-store:local-storage'
   };
 
   if (environment === 'development') {
