@@ -4,5 +4,5 @@ import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-passwor
 
 export default OAuth2PasswordGrant.extend({
     serverTokenEndpoint: ENV.APP.apiHost + '/session',
-    serverTokenRevocationEndpoint: ENV.APP.apiHost + '/session'
+    serverTokenRevocationEndpoint: ENV.APP.apiHost + '/session/revoke'
 });
