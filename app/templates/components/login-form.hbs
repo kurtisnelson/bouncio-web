@@ -1,7 +1,7 @@
 <form id="login" {{action "login" on="submit"}}>
   {{input value=email type="email" required="true" placeholder="email"}}
   {{input value=password type="password" required="true" placeholder="password"}}
-  {{#loading-button disabled=cannot_submit action='login' isSpinning=busy}}
+  {{#loading-button enabled=can_submit action='login' isSpinning=busy}}
   Sign in
   {{/loading-button}}
   {{#if errorMessage}}

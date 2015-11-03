@@ -14,7 +14,8 @@
     "qunit": "~1.18.0",
     "node-uuid": "1.4.3",
     "neat": "~1.7.2",
-    "normalize.css": "3.0.3"
+    "normalize.css": "3.0.3",
+    "spin.js": "~2.3.2"
   },
   "resolutions": {
     "ember": "2.0.1"

@@ -12,8 +12,8 @@ export default Ember.Component.extend({
     return this.get("email") && this.get("email").length >= 3;
   }),
 
-  cannot_submit: Ember.computed('valid_password', function(){
-    return !this.get("valid_password") || !this.get("valid_email");
+  can_submit: Ember.computed('valid_password', 'valid_email', function(){
+    return this.get("valid_password") && this.get("valid_email");
   }),
 
   actions: {
