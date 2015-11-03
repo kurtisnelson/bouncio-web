@@ -1,8 +1,10 @@
 <form id="login" {{action "login" on="submit"}}>
   {{input value=email type="email" required="true" placeholder="email"}}
   {{input value=password type="password" required="true" placeholder="password"}}
-  <button type="submit" disabled={{cannot_submit}}>Sign in</button>
+  {{#loading-button disabled=cannot_submit action='login' isSpinning=busy}}
+  Sign in
+  {{/loading-button}}
   {{#if errorMessage}}
-    <span class="error">Sorry, those credentials are not valid.</span>
+    <span class="error">{{errorMessage}}</span>
   {{/if}}
 </form>

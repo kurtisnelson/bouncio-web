@@ -2,21 +2,33 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
-  valid_password: (function() {
+  busy: false,
+
+  valid_password: Ember.computed('password', function(){
     return this.get("password") && this.get("password").length >= 8;
-  }).property("password"),
-  valid_email: (function() {
+  }),
+
+  valid_email: Ember.computed('email', function(){
     return this.get("email") && this.get("email").length >= 3;
-  }).property("email"),
-  cannot_submit: (function() {
+  }),
+
+  cannot_submit: Ember.computed('valid_password', function(){
     return !this.get("valid_password") || !this.get("valid_email");
-  }).property('valid_password'),
+  }),
+
   actions: {
     login() {
+      this.set('busy', true)
       let data = this.getProperties('email', 'password');
       data.identification = data.email;
       this.get('session').authenticate('authenticator:oauth2', data).catch((reason) => {
-        this.set('errorMessage', reason.error);
+        if(reason.error) {
+          this.set('errorMessage', reason.error);
+        } else {
+          this.set('errorMessage', "Login failed, check your internet")
+        }
+      }).finally(() => {
+        this.set('busy', false)
       });
     }
   }
