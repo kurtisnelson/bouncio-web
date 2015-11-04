@@ -22,9 +22,8 @@ export default Ember.Component.extend({
   actions: {
     login() {
       this.set('isBusy', true)
-      let username = this.get('email');
-      let password = this.get('password');
-      this.get('session').authenticate('authenticator:oauth2', {username, password}).catch((reason) => {
+      let { email, password } = this.getProperties('email', 'password');
+      this.get('session').authenticate('authenticator:oauth2', email, password).catch((reason) => {
         if(reason.error == "invalid_request") {
           this.set('errorMessage', "Invalid credentials");
         } else if(reason.error) {
