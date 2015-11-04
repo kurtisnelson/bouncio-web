@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
+  isBusy: false,
 
   valid_password: Ember.computed('password', function(){
     return this.get("password") && this.get("password").length >= 8;
@@ -20,10 +21,10 @@ export default Ember.Component.extend({
 
   actions: {
     login() {
-      this.sendAction('busy', true)
-      let data = this.getProperties('email', 'password');
-      data.identification = data.email;
-      this.get('session').authenticate('authenticator:oauth2', data).catch((reason) => {
+      this.set('isBusy', true)
+      let username = this.get('email');
+      let password = this.get('password');
+      this.get('session').authenticate('authenticator:oauth2', {username, password}).catch((reason) => {
         if(reason.error == "invalid_request") {
           this.set('errorMessage', "Invalid credentials");
         } else if(reason.error) {
@@ -32,7 +33,7 @@ export default Ember.Component.extend({
           this.set('errorMessage', "Login failed, check your internet")
         }
       }).finally(() => {
-        this.sendAction('busy', false)
+        this.set('isBusy', false)
       });
     }
   }

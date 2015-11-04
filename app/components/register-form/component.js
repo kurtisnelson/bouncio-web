@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  isBusy: false,
   valid_password: (function() {
     return this.get("user.password") && this.get("user.password").length >= 8;
   }).property("user.password"),
@@ -10,14 +11,18 @@ export default Ember.Component.extend({
   passwords_match: (function() {
     return this.get('confirmPassword') === this.get('user.password');
   }).property("user.password", "confirmPassword"),
+
   actions: {
     register: function() {
       var self;
       if (this.get('passwords_match')) {
+        this.set('isBusy', true)
         self = this;
         return this.user.save().then(function() {
-          return self.sendAction;
-        });
+          self.sendAction;
+        }).finally( ()=>
+          this.set('isBusy', false)
+        );
       } else {
         return alert("Passwords do not match");
       }

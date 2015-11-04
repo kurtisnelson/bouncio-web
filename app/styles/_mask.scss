@@ -1,4 +1,4 @@
-& .mask {
+.mask {
   visibility: hidden;
   opacity: 0;
   position: relative;
@@ -10,7 +10,7 @@
   overflow: auto;
   transition:opacity 0.2s ease-in;
 }
-& .mask.busy {
+.mask.busy {
   visibility: visible;
   opacity: 1;
 }

@@ -1,9 +1,7 @@
 {{#dialog-box}}
   <span class="title"><img src="assets/images/logo.png" alt="bounc.io" height="104"/></span>
   <div class="content">
-    {{#unless noRegistration}}
-      {{register-form user=model}}
-    {{/unless}}
+    {{register-form user=model}}
     {{link-to "<- Login" 'login'}}
   </div>
 {{/dialog-box}}

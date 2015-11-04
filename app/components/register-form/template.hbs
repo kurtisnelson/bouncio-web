@@ -1,3 +1,6 @@
+<div class="mask {{if isBusy 'busy'}}">
+  {{ember-spinner lines='5' hwaccel='true' scale="1.5"}}
+</div>
 <form id="register" {{action "register" on="submit"}}>
   <label>Email</label>
   {{input value=user.email type="email" required="true"}}
