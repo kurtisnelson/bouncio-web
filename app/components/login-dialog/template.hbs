@@ -1,0 +1,11 @@
+{{#dialog-box}}
+  <span class="title"><img src="assets/images/logo.png" alt="bounc.io" height="104"/></span>
+  <div class="content">
+    <div class="mask {{if isBusy 'busy'}}">
+      {{ember-spinner lines='5' hwaccel='true' scale="1.5"}}
+    </div>
+    {{login-form busy="busy"}}
+    Don't have an account yet? {{link-to "Get one" 'register'}}
+    {{yield}}
+  </div>
+{{/dialog-box}}

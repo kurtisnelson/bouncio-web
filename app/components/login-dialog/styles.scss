@@ -1,0 +1,16 @@
+& .mask {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  @include position(absolute, 0);
+  background-color: rgba(#FFF, 0.85);
+  overflow: auto;
+  transition:opacity 0.2s ease-in;
+}
+& .mask.busy {
+  visibility: visible;
+  opacity: 1;
+}
