@@ -12,12 +12,15 @@
   $modal-background: $base-background-color;
 
   @include position(absolute, 0);
-  background-color: rgba(#000, 0.85);
+  background-color: #000;
   padding-top: 0.6em;
   text-align: left;
   z-index: 99999999999;
   overflow: auto;
 
+  @include media($medium-screen) {
+    background-color: rgba(#000, 0.85);
+  }
   @include media($large-screen) {
     padding-top: 10em;
   }
