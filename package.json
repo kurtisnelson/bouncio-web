@@ -55,5 +55,10 @@
     "ember-normalize": "0.0.9",
     "ember-simple-auth": "1.0.1",
     "simple-auth": "0.0.1"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/errortracking"
+    ]
   }
 }

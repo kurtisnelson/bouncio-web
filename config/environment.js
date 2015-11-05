@@ -19,7 +19,7 @@ module.exports = function(environment) {
       'script-src': "'self'",
       'font-src': "'self'",
       'connect-src': "'self' bouncio-core.herokuapp.com localhost:4000",
-      'img-src': "'self'",
+      'img-src': "'self' app.getsentry.com",
       'style-src': "'self' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
       'media-src': "'self'"
     },
