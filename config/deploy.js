@@ -1,19 +1,19 @@
-require('dotenv').load();
-var key = process.env['AWS_KEY_ID'];
-var secret = process.env['AWS_SECRET_KEY'];
-module.exports = {
-  development: {
-    store: {
-      type: "S3",
-      accessKeyId: key,
-      secretAccessKey: secret,
-      bucket: "app.bounc.io"
-    },
-    assets: {
-      type: "s3",
-      accessKeyId: key,
-      secretAccessKey: secret,
-      bucket: "app.bounc.io"
-    }
+module.exports = function(environment){
+  var ENV = {};
+
+  ENV.s3 = {
+    accessKeyId: process.env.AWS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    bucket: 'app.bounc.io'
   }
-}
+
+  ENV['s3-index'] = {
+    accessKeyId: process.env.AWS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    bucket: 'app.bounc.io'
+  }
+  ENV.pipeline = {
+      activateOnDeploy: true
+  }
+  return ENV;
+};
