@@ -13,7 +13,15 @@ module.exports = function(environment){
     bucket: 'app.bounc.io'
   }
   ENV.pipeline = {
-      activateOnDeploy: true
+    activateOnDeploy: true
+  }
+
+  ENV.sentry = {
+    publicUrl: 'https://app.bounc.io',
+    sentryUrl: 'https://app.getsentry.com',
+    sentryOrganizationSlug: 'bouncio',
+    sentryProjectSlug: 'bouncio-web',
+    sentryApiKey: process.env.SENTRY_KEY
   }
   return ENV;
 };
