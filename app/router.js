@@ -12,6 +12,7 @@ Router.map(function() {
   this.route("users", function() {
     this.route("new");
   });
+  this.route("app", { path: "/apps/:id" });
   this.route("apps", { path: "/apps" }, function() {
     this.route("new");
   });

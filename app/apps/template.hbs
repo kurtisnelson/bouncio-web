@@ -8,9 +8,10 @@
   <tbody>
     {{#each model as |app|}}
     <tr>
-      <td>{{app.name}}</td>
+      <td>{{#link-to "app" app}}{{app.name}}{{/link-to}}</td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+{{link-to "New" "apps.new" class="btn"}}
 {{outlet}}
