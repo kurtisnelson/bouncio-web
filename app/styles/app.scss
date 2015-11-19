@@ -5,3 +5,7 @@
 
 @import "mask";
 @import "pod-styles";
+
+main {
+  @include outer-container;
+}
