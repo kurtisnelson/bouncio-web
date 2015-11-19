@@ -1,7 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  email: DS.attr(),
+  email: DS.attr("string"),
+  maskedEmail: DS.attr("string"),
   password: DS.attr(),
-  app: DS.belongsTo('app')
+  emailVerified: DS.attr("date"),
+  app: DS.belongsTo("app")
 });

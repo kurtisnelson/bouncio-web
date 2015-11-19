@@ -1,0 +1,16 @@
+<h2>Apps</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |app|}}
+    <tr>
+      <td>{{app.name}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{outlet}}
