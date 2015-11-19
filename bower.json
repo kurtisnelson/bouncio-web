@@ -1,10 +1,10 @@
 {
   "name": "bouncio",
   "dependencies": {
-    "ember": "2.1.0",
+    "ember": "2.2.0",
     "ember-cli-shims": "ember-cli/ember-cli-shims",
     "ember-cli-test-loader": "ember-cli/ember-cli-test-loader",
-    "ember-data": "^2.1.0",
+    "ember-data": "^2.2.0",
     "ember-load-initializers": "ember-cli/ember-load-initializers",
     "ember-qunit": "0.4.9",
     "ember-qunit-notifications": "0.0.7",
