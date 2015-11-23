@@ -1,0 +1,12 @@
+<div class="mask {{if isBusy 'busy'}}">
+  {{ember-spinner lines='5' hwaccel='true' scale="1.5"}}
+</div>
+<form id="new_app" {{action "create" on="submit"}}>
+  <label for="name">Name</label>
+  {{input value=app.name type="text" name="name" required="true"}}
+  <button>Create</button>
+  {{#if errorMessage}}
+    <span class="error">{{errorMessage}}</span>
+  {{/if}}
+</form>
+{{yield}}
