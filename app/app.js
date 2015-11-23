@@ -7,9 +7,6 @@ if(config.environment === 'production') {
     release: $("meta[name='sentry:revision']").attr('content')
   }).install();
 }
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js', {scope: './'})
-}
 var Bouncio;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
